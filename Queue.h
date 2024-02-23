@@ -19,7 +19,7 @@ if(new_node){
 }
 
 
-int dequeue_struct(Queue *q){
+void dequeue_struct(Queue *q){
    NodePtr t=q->headPtr;
    if(t){
    int value= t->data;
@@ -27,10 +27,10 @@ int dequeue_struct(Queue *q){
    q->headPtr=q->headPtr->nextPtr;
    free(t);
    if(q->size==0) q->tailPtr=NULL;
+   printf("dequeing %d\n",value);
    q->size--;
-   return value;
+   //return value;
    }
-   printf("Empty queue\n");
-   return 0;
+   //return 0;
 }
 

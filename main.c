@@ -30,8 +30,12 @@ printf("%d",x);
 */
  for(i=1;i<argc;i++){
         if(strcmp(argv[i],"x")==0){
-            x=dequeue_struct(&q);
-            if(x!=0) printf("dequeing %d\n",x);
+            if(q.size!=0)
+            //x=dequeue_struct(&q);
+            dequeue_struct(&q);
+            else {
+              printf("Empty queue\n");
+            }
         }
         else {
        enqueue_struct(&q, atoi(argv[i]));
