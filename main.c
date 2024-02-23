@@ -23,20 +23,20 @@ int main(int argc , char **argv) {
   q.tailPtr=NULL;
   q.size=0;
   int i,x;
+/*
 enqueue_struct(&q,4);
 x = dequeue_struct(&q);
 printf("%d",x);
-/*
+*/
  for(i=1;i<argc;i++){
         if(strcmp(argv[i],"x")==0){
-            x=dequeue(&headPtr,&tailPtr);
-            printf("dequeing %d\n",x);
+            x=dequeue_struct(&q);
+            if(x!=0) printf("dequeing %d\n",x);
         }
         else {
-       enqueue_struct(&headPtr,&tailPtr, atoi(argv[i]));
-           
+       enqueue_struct(&q, atoi(argv[i]));
         }
  }
+ printf("%d",q.size);
   return 0;
-*/
 }

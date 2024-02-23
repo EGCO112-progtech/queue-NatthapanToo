@@ -14,6 +14,7 @@ if(new_node){
   else q->tailPtr->nextPtr=new_node;
   q->tailPtr=new_node;
   q->tailPtr->data=x;
+  q->size++;
  }
 }
 
@@ -26,9 +27,10 @@ int dequeue_struct(Queue *q){
    q->headPtr=q->headPtr->nextPtr;
    free(t);
    if(q->size==0) q->tailPtr=NULL;
+   q->size--;
    return value;
    }
-   printf("Empty queue");
+   printf("Empty queue\n");
    return 0;
 }
 
